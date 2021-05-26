@@ -1,1 +1,91 @@
-Witaj świecie
+<!doctype html>
+{% load static %}
+
+<html xml:lang="pl" lang="pl">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-2" />
+	<meta name="description" content="opis" />
+	<meta name="keywords" content="" />
+
+	<!-- Bootstrap -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" media="screen,projection" />
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<title>tytuł</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="https://graszki.pl">Graszki.pl</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav me-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="#">Lista gier</a>
+					</li>
+					<!--
+					<li class="nav-item">
+						<a class="nav-link" href="#">Kontakt</a>
+					</li-->
+				</ul>
+				<!--
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+                -->
+			</div>
+		</div>
+	</nav>
+
+	<main class="container">
+		<div class="bg-light p-5 rounded text-center">
+			<h1>Lista gier do wypożyczenia w sklepie Graszki.pl</h1>
+			<p class="lead">W celu wypożyczenia danej gry prosimy o wcześniejszy kontakt mailowy, telefoniczny lub przez FB.</p>
+			<!--<a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs &raquo;</a>-->
+		</div>
+		<div class="container">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nazwa</th>
+						<th scope="col">Dostępność</th>
+						<th scope="col">Orientacyjna data zwrotu</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>@mdo</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>@fat</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td colspan="2">Larry the Bird</td>
+						<td>@twitter</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</main>
+	<!-- Optional JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+
+</html>
