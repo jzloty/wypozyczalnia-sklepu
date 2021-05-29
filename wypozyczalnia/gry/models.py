@@ -11,7 +11,7 @@ class NazwaGry(models.Model):
                                                    ' zwrotu', null=True)
 
     def __str__(self):
-        return self.Tytyl
+        return self.Tytul
 
 
 '''
