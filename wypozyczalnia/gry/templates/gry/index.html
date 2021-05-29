@@ -15,13 +15,13 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" media="screen,projection" />
 	<script src="{% static 'js/bootstrap.min.js' %}"></script>
 
-	<title>tytuł</title>
+	<title>Wypożyczalnia Graszki.pl</title>
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="https://graszki.pl">Graszki.pl</a>
+			<a class="navbar-brand" href="https://graszki.pl" target="_blank">Graszki.pl</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -51,40 +51,23 @@
 			<p class="lead">W celu wypożyczenia danej gry prosimy o wcześniejszy kontakt mailowy, telefoniczny lub przez FB.</p>
 			<!--<a class="btn btn-lg btn-primary" href="/docs/5.0/components/navbar/" role="button">View navbar docs &raquo;</a>-->
 		</div>
-		<div class="container">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col">Nazwa</th>
-						<th scope="col">Dostępność</th>
+        <div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+						<th scope="col">Nazwa gry</th>
 						<th scope="col">Orientacyjna data zwrotu</th>
 					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
-						<td>@mdo</td>
-					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td colspan="2">Larry the Bird</td>
-						<td>@twitter</td>
-					</tr>
-				</tbody>
-			</table>
-
-		</div>
-        <div class="container">
-            {{ Lista_gier }}
+                </thead>
+                <tbody>
+                    {% for gra in Lista_gier %}
+                        <tr class="{% if gra.Dostepnosc == 0 %}table-danger{% endif %}">
+                            <td>{{ gra.Tytul }}</td>
+                            <td>{{ gra.Data_orientacyjny_zwrot }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
 	</main>
 	<!-- Optional JavaScript -->

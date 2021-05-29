@@ -5,9 +5,9 @@ class NazwaGry(models.Model):
     class Meta:
         verbose_name_plural = "Nazwy Gier"
     Tytul = models.CharField(max_length=200)
-    Data_wypozyczenie = models.DateTimeField(null=True)
+    Data_wypozyczenie = models.DateField(null=True, blank=True)
     Dostepnosc = models.BooleanField(default=True)
-    Data_orientacyjny_zwrot = models.DateTimeField(null=True)
+    Data_orientacyjny_zwrot = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return self.Tytul
