@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from . import NazwaGry
+from gry.models import NazwaGry
 
 
 def index(request):
-    Lista_gier = NazwaGry.objects.order_by('Tytul')
+    Lista_gier = NazwaGry.objects.all()
     context = {'Lista_gier': Lista_gier}
     return render(request, 'gry/index.html', context)
