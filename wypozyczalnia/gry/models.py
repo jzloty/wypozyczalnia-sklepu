@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib import admin
 
 
 class NazwaGry(models.Model):
@@ -9,6 +10,9 @@ class NazwaGry(models.Model):
     # Dostepnosc = models.BooleanField(default=True)
     Data_orientacyjny_zwrot = models.DateField(null=True, blank=True)
 
+    @admin.display(
+        ordering='Tytul'
+    )
     def __str__(self):
         return self.Tytul
 
