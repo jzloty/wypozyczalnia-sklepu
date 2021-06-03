@@ -10,13 +10,13 @@ def index(request):
     return render(request, 'gry/index.html', context)
 
 
-def szukaj(request):
+def szukajGry(request):
     if request.method == 'POST':
         szukane = json.loads(request.body).get('szukanyText')
 
         wynik = NazwaGry.objects.filter(Tytul__icontains=szukane) | \
             NazwaGry.objects.filter(
-                Data_orientacyjny_zwrot__stars_with=szukane)
+                Data_orientacyjny_zwrot__istartswith=szukane)
         dane = wynik.values()
 
         return JsonResponse(list(dane), safe=False)
