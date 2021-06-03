@@ -16,7 +16,7 @@ def szukajGry(request):
 
         wynik = NazwaGry.objects.filter(Tytul__icontains=szukane) | \
             NazwaGry.objects.filter(
-                Data_orientacyjny_zwrot__istartswith=szukane)
+                Data_orientacyjny_zwrot__icontains=szukane)
         dane = wynik.values()
 
         return JsonResponse(list(dane), safe=False)
