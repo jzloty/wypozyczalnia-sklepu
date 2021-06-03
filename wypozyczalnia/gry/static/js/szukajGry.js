@@ -31,10 +31,17 @@ searchField.addEventListener('keyup',(e)=>{
 					} else {
 						kolor = "";
 					}
+
+					var data = null;
+					if(item.Data_orientacyjny_zwrot != null){
+						data = item.Data_orientacyjny_zwrot;
+					} else {
+						data = "";
+					}
 					tbody.innerHTML +=`
 					<tr class=`+kolor+`>
 						<td>${item.Tytul}</td>
-						<td>${item.Data_orientacyjny_zwrot}</td>
+						<td>${data}</td>
 					</tr>`;
 				});
 			}

@@ -76,7 +76,7 @@
 					{% for gra in Lista_gier %}
 					<tr class="{% if gra.Data_orientacyjny_zwrot != null %}table-danger{% endif %}">
 						<td>{{ gra.Tytul }}</td>
-						<td>{{ gra.Data_orientacyjny_zwrot }}</td>
+						<td>{{ gra.Data_orientacyjny_zwrot| date:"Y-m-d"}}</td>
 					</tr>
 					{% endfor %}
 				</tbody>
