@@ -24,7 +24,7 @@ searchField.addEventListener('keyup',(e)=>{
 			if(data.length === 0){
 				tableOutput.innerHTML = "Brak wyników";
 			} else {
-				data.forEach((item) => {
+				data.forEach((item, index) => {
 					var kolor = null;
 					if(item.Data_orientacyjny_zwrot != null){
 						 kolor = "table-danger";
@@ -40,6 +40,7 @@ searchField.addEventListener('keyup',(e)=>{
 					}
 					tbody.innerHTML +=`
 					<tr class=`+kolor+`>
+						<td scope="col" class="text-center">${index+1}
 						<td>${item.Tytul}</td>
 						<td>${data}</td>
 					</tr>`;
