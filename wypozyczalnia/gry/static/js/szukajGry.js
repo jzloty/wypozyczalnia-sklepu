@@ -40,7 +40,7 @@ searchField.addEventListener('keyup',(e)=>{
 					}
 					tbody.innerHTML +=`
 					<tr class=`+kolor+`>
-						<td scope="col" class="text-center">${index+1}
+						<td scope="col" class="text-center">${index+1}</td>
 						<td>${item.Tytul}</td>
 						<td>${data}</td>
 					</tr>`;
