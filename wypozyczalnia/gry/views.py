@@ -6,7 +6,9 @@ from django.http import JsonResponse
 
 def index(request):
     Lista_gier = NazwaGry.objects.all().order_by('Tytul')
-    context = {'Lista_gier': Lista_gier}
+    Ilosc_gier = NazwaGry.objects.all().count()
+    context = {'Lista_gier': Lista_gier,
+               "Ilosc_gier": Ilosc_gier}
     return render(request, 'gry/index.html', context)
 
 
