@@ -65,22 +65,32 @@
 			<table class="table table-sm table-hover">
 				<colgroup>
                     <col class="col-md-1">
-                    <col class="col-md-5">
-					<col class="col-md-5">
+                    <col class="col-md-4">
+					<col class="col-md-4">
+					<col class="col-md-2">
 				</colgroup>
 				<thead class="table-light">
 					<tr>
                         <th scope="col" class="text-center">Lp.</th>
 						<th scope="col">Nazwa gry</th>
 						<th scope="col">Orientacyjna data zwrotu</th>
+						<th scope="col" class="text-center">Dostępność</th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for gra in Lista_gier %}
-					<tr class="{% if gra.Data_orientacyjny_zwrot != null %}table-danger{% endif %}">
+					<tr class="{% if gra.Data_orientacyjny_zwrot != null %}table-danger{% endif %}
+							   {% if gra.DostepnySklep == True %}table-success{% endif %}">
                         <td class="text-center">{{ forloop.counter }}</td>
 						<td>{{ gra.Tytul }}</td>
 						<td>{{ gra.Data_orientacyjny_zwrot| date:"Y-m-d"}}</td>
+						<td class="text-center">
+							{% if gra.DostepnySklep == True %}
+								Dostępny w sklepie
+							{% else %}
+
+							{% endif %}
+						</td>
 					</tr>
 					{% endfor %}
 				</tbody>
