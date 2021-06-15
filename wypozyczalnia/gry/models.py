@@ -5,14 +5,15 @@ from django.contrib import admin
 class NazwaGry(models.Model):
     class Meta:
         verbose_name_plural = "Nazwy Gier"
+        ordering=['Tytul']
     Tytul = models.CharField(max_length=200)
     DostepnySklep = models.BooleanField(default=False)
     Data_wypozyczenie = models.DateField(null=True, blank=True)
     Data_orientacyjny_zwrot = models.DateField(null=True, blank=True)
 
-    @admin.display(
-        ordering='Tytul'
-    )
+    # @admin.display(
+    #     ordering=['-Tytul']
+    # )
     def __str__(self):
         return self.Tytul
 
