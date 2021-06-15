@@ -11,9 +11,10 @@ class NazwaGry(models.Model):
     Data_wypozyczenie = models.DateField(null=True, blank=True)
     Data_orientacyjny_zwrot = models.DateField(null=True, blank=True)
 
-    # @admin.display(
-    #     ordering=['-Tytul']
-    # )
+    def save(self, *args, **kwargs):
+        self.DostepnySklep = False if self.Data_orientacyjny_zwrot else True
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.Tytul
 
