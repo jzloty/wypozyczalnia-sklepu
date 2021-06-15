@@ -5,7 +5,7 @@ from .models import NazwaGry
 
 class NazwaGryAdmin(admin.ModelAdmin):
     list_display = ('Tytul', 'Data_orientacyjny_zwrot',
-                    'Data_wypozyczenie')
+                    'Data_wypozyczenie','DostepnySklep')
     search_fields = ['Tytul']
 
     actions = ['Ustaw_niedostepne',
