@@ -8,5 +8,14 @@ class NazwaGryAdmin(admin.ModelAdmin):
                     'Data_wypozyczenie')
     search_fields = ['Tytul']
 
+    actions = ['Ustaw_niedostepne',
+               'Ustaw_dostepne']
+
+    def Ustaw_niedostepne(self, request, queryset):
+        queryset.update(DostepnySklep=False)
+
+    def Ustaw_dostepne(self, request, queryset):
+        queryset.update(DostepnySklep=True)
+
 
 admin.site.register(NazwaGry, NazwaGryAdmin)
