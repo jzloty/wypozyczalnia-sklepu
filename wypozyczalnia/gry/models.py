@@ -12,7 +12,8 @@ class NazwaGry(models.Model):
     Data_orientacyjny_zwrot = models.DateField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
-        self.DostepnySklep = False if self.Data_orientacyjny_zwrot else True
+        if self.Data_orientacyjny_zwrot is not None:
+            self.DostepnySklep = False
         super().save(*args, **kwargs)
 
     def __str__(self):
